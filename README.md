@@ -4,6 +4,16 @@
 - 博客: [基于Docker搭建Hadoop集群之升级版](http://kiwenlau.com/2016/06/12/160612-hadoop-cluster-docker-update/)
 
 
+将Hadoop打包到Docker镜像中，就可以快速地在单个机器上搭建Hadoop集群，这样可以方便新手测试和学习。
+
+如下图所示，Hadoop的master和slave分别运行在不同的Docker容器中，
+其中hadoop-master容器中运行NameNode和ResourceManager，
+hadoop-slave容器中运行DataNode和NodeManager。
+NameNode和DataNode是Hadoop分布式文件系统HDFS的组件，负责储存输入以及输出数据，
+而ResourceManager和NodeManager是Hadoop集群资源管理系统YARN的组件，负责CPU和内存资源的调度。
+
+
+
 ![alt tag](https://raw.githubusercontent.com/kiwenlau/hadoop-cluster-docker/master/hadoop-cluster-docker.png)
 
 
